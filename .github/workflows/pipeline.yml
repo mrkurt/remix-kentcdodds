@@ -142,6 +142,7 @@ jobs:
           password: ${{ secrets.FLY_API_TOKEN }}
 
       - name: 🐳 Docker push
+        uses: docker/build-push-action@v2
         context: .
         push: true
         tags: registry.fly.io/withered-frost-3196:${{ github.sha }}
